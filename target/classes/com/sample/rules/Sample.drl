@@ -1,0 +1,286 @@
+declare Question
+	shortenedQuestion:String
+    content: String
+    possibleAnswers : String[]
+   userChoice:String
+    endsWhen:String
+    
+end
+
+declare ControlProcess
+    stopProcessing : boolean = false
+end
+
+
+rule "INIT"
+	when
+	then
+	    String[] possibleAnswers = new String[]{"YES","NO"};
+	    insert(new ControlProcess(false));  
+	    insert(new Question("inJapan", "Are you in Japan?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "atMovies"
+	when
+		p:Question(shortenedQuestion=="inJapan",userChoice=="NO")
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"}; 
+		insert(new Question("atMovies", "Are you at the movies?", possibleAnswers, "NULL",  "YES"));
+end
+
+rule "GreatDepression"
+	when
+		p:Question(shortenedQuestion=="atMovies",userChoice=="NO")
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("GreatDepression", "Were you raised during the Great Depression?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "WyldStallyns"
+	when
+		p:Question(shortenedQuestion=="GreatDepression",userChoice=="NO")		
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("WyldStallyns", "Are you a member of Wyld Stallyns?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "atFair"
+	when
+		p:Question(shortenedQuestion=="WyldStallyns",userChoice=="NO")		
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("atFair", "Are you at the fair?", possibleAnswers, "NULL", "YES"));
+end		
+
+rule "careAboutTeeth"
+	when
+		p:Question(shortenedQuestion=="atFair",userChoice=="NO")			
+	then	
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("careAboutTeeth", "Do you care about your teeth?", possibleAnswers, "NULL", "NO"));
+end	
+
+rule "nameThurgood"
+	when
+		p:Question(shortenedQuestion=="careAboutTeeth",userChoice=="YES")	
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("nameThurgood", "Is your name Thurgood?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "charlieBucket"
+	when
+		p:Question(shortenedQuestion=="nameThurgood",userChoice=="NO")	
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("charlieBucket", "Are you Charlie Bucket?", possibleAnswers, "NULL", "YES"));
+end
+			
+rule "atVendingMachine"
+	when
+		p:Question(shortenedQuestion=="charlieBucket",userChoice=="NO")		
+	then		
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("atVendingMachine", "Are you at a vending machine?", possibleAnswers, "NULL","YES"));
+end
+
+rule"under16"
+	when
+		p:Question(shortenedQuestion=="atVendingMachine",userChoice=="NO")		
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("under16", "Are you under 16 years old?", possibleAnswers, "NULL","NONE"));
+end
+
+rule "under10"
+	when
+		p:Question(shortenedQuestion=="under16",userChoice=="YES")	
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("under10", "Are you under 10 years?", possibleAnswers, "NULL","BOTH"));
+end		
+		
+rule "likeChalk"
+	when
+		p:Question(shortenedQuestion=="under16",userChoice=="NO")	
+	then		
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("likeChalk", "Do you like eating chalk?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "wantPlay"
+	when		
+		p:Question(shortenedQuestion=="likeChalk",userChoice=="NO")	
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("wantPlay", "Do you want to play with it?", possibleAnswers, "NULL","YES"));
+end		
+
+rule "wantFruity"		
+	when		
+		p:Question(shortenedQuestion=="wantPlay",userChoice=="NO")	
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("wantFruity", "Do you want something 'fruity'?", possibleAnswers, "NULL", "NONE"));
+end
+		
+rule "tasteRainbow"
+	when
+		p:Question(shortenedQuestion=="wantFruity",userChoice=="YES")
+	then	
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("tasteRainbow", "Do you want to taste the rainbow?", possibleAnswers, "NULL", "BOTH"));
+end		
+		
+rule "wantLicorice"
+	when
+		p:Question(shortenedQuestion=="wantFruity",userChoice=="NO")
+	then	
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("wantLicorice", "Do you want licorice?", possibleAnswers, "NULL", "NONE"));
+end
+	
+rule "realLicorice"	
+	when
+		p:Question(shortenedQuestion=="wantLicorice",userChoice=="YES")
+	then	
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("realLicorice", "...real licorice?", possibleAnswers, "NULL", "BOTH"));
+end	
+
+rule "isEaster"	
+	when
+		p:Question(shortenedQuestion=="wantLicorice",userChoice=="NO")
+	then	
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("isEaster", "Is it Easter?", possibleAnswers, "NULL","YES"));
+end	
+				
+rule "onDiet"				
+	when
+		p:Question(shortenedQuestion=="isEaster",userChoice=="NO") 	
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("onDiet", "Are you on a diet?", possibleAnswers, "NULL","YES"));
+end
+
+rule "atTruckStop"
+	when		
+		p:Question(shortenedQuestion=="onDiet",userChoice=="NO")
+	then 		
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("atTruckStop", "Are you at a truck stop?", possibleAnswers, "NULL","YES"));
+end		
+
+rule "likeCoconut"
+	when
+		p:Question(shortenedQuestion=="atTruckStop",userChoice=="NO")		
+	then	
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("likeCoconut", "Do you like coconut?", possibleAnswers, "NULL","YES"));
+end
+
+rule "couchCushions"
+	when
+		p:Question(shortenedQuestion=="likeCoconut",userChoice=="NO")
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("couchCushions", "Were you searching in the couch cushions?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "likeToothpaste"
+	when
+		p:Question(shortenedQuestion=="couchCushions",userChoice=="NO")		
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("likeToothpaste", "Do you like eating toothpaste?", possibleAnswers, "NULL", "YES"));
+end
+
+rule "makingSundae"
+	when
+		p:Question(shortenedQuestion=="likeToothpaste",userChoice=="NO")			
+	then 
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("makingSundae", "Are you making a sundae?", possibleAnswers, "NULL", "YES"));
+end		
+
+rule "nothingElse"
+	when
+		p:Question(shortenedQuestion=="makingSundae",userChoice=="NO")						
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("nothingElse", "Is there nothing else?", possibleAnswers, "NULL","YES"));
+end
+
+rule "oldFashioned"
+	when
+		p:Question(shortenedQuestion=="nothingElse",userChoice=="NO")						
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("oldFashioned", "Are you old-fashioned?", possibleAnswers, "NULL", "NONE"));
+end
+
+rule "andClassic"
+	when
+		p:Question(shortenedQuestion=="oldFashioned",userChoice=="YES")			
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("andClassic","...and classic?", possibleAnswers, "NULL","BOTH"));
+end
+
+rule "thatTimeOfMonth"
+	when
+		p:Question(shortenedQuestion=="oldFashioned",userChoice=="NO")			
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("thatTimeOfMonth", "Is it 'that time of the month'?", possibleAnswers, "NULL","YES"));
+end		
+
+rule "loveNuts"
+	when
+		p:Question(shortenedQuestion=="thatTimeOfMonth",userChoice=="NO")			
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("loveNuts", "Do you love nuts?", possibleAnswers, "NULL","YES"));
+end
+
+rule "wantChocolate"
+	when		
+		p:Question(shortenedQuestion=="loveNuts",userChoice=="NO")
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("wantChocolate", "Do you want chocolate?", possibleAnswers, "NULL","NO"));
+end
+
+rule "wantBite"
+	when
+		p:Question(shortenedQuestion=="wantChocolate",userChoice=="YES")
+	then		
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("wantBite", "Do you want something with a bite?", possibleAnswers, "NULL","YES"));
+end		
+
+rule "mouthLoveYou"		
+	when
+		p:Question(shortenedQuestion=="wantBite",userChoice=="NO")
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("mouthLoveYou", "Do you want your mouth to love you?", possibleAnswers, "NULL",  "YES"));
+end
+
+rule "isChristmas"
+	when	
+		p:Question(shortenedQuestion=="mouthLoveYou",userChoice=="NO")	//zmienic na fakt przedmitowy
+	then
+		String[] possibleAnswers = new String[]{"YES","NO"};
+		insert(new Question("isChristmas", "Is it Christmas?", possibleAnswers, "NULL","BOTH"));	    			    
+end
+
+rule "Koniec konwersacji"
+	when
+	    p : (Question( choice : userChoice, endsWhen == choice ) or Question( endsWhen == "BOTH",userChoice!="NULL" ))
+	    proces : ControlProcess( stopProcessing == false )
+	then
+	    proces.setStopProcessing(true);
+	    update(proces);
+end

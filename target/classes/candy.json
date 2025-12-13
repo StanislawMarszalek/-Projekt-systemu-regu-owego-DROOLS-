@@ -1,0 +1,184 @@
+{
+  "inJapan_YES": [
+    "WasabiKitKat.jpg"
+  ],
+  "atMovies_YES": [
+    "CookieDoughBites.jpg",
+    "MikeandIke.jpg",
+    "Raisinets.jpg",
+    "JuniorMints.jpg",
+    "SnoCaps.jpg",
+    "Goobers.jpg"
+  ],
+  "GreatDepression_YES": [
+    "MaryJanes.jpg",
+    "SaltWaterTaffy.jpg",
+    "BitOHoney.jpg",
+    "Chick-O-Stick.jpg",
+    "MilkChocolateBeans.jpg"
+  ],
+  "WyldStallyns_YES": [
+    "ElvisBigCup.jpg",
+    "ChickenDinner.jpg"
+  ],
+  "atFair_YES": [
+    "SwirlLollipop.jpg",
+    "CottonCandy.jpg",
+    "RockCandies.jpg"
+  ],
+  "careAboutTeeth_NO": [
+    "MilkDuds.jpg",
+    "Dots.jpg",
+    "BigHunk.jpg",
+    "Jujubes.jpg",
+    "SugarDaddyCandies.jpg"
+
+  ],
+  "nameThurgood_YES": [
+    "AbbaZaba.jpg"
+    ],
+  "charlieBucket_YES": [
+    "WonkaBar.jpg"
+  ],
+  "atVendingMachine_YES": [
+    "Lifesavers.jpg",
+    "Rolo.jpg"
+    ],
+  "under10_YES": [
+    "PixyStix.jpg",
+    "RingPop.jpg",
+    "WonkaNerds.jpg",
+    "JawBreaker.jpg",
+    "PushPops.jpg"
+
+  ],
+  "under10_NO": [
+    "PopRocks.jpg",
+    "LaffyTaffy.jpg",
+    "AirHeads.jpg",
+    "SourPatchKids.jpg",
+    "NowLater.jpg",
+    "WarHeads.jpg",
+    "TrolliAppleOs.jpg"
+  ],
+  "likeChalk_YES": [
+    "Smarties.jpg",
+    "Whoppers.jpg",
+    "NeccoWafers.jpg"
+  ],
+  "wantPlay_YES": [
+    "PEZ.jpg",
+    "FunDip.jpg",
+    "SourStrawberryBelts.jpg"
+  ],
+  "tasteRainbow_YES": [
+    "Skittles.jpg"
+  ],
+  "tasteRainbow_NO": [
+    "Starburst.jpg",
+    "Lemonhead.jpg",
+    "JollyRancherHardCandies.jpg"
+  ],
+  "realLicorice_YES": [
+    "BlackLicorice.jpg",
+    "Good&Plenty.jpg"
+    ],
+  "realLicorice_NO": [
+    "Twizzlers.jpg",
+    "RedVines.jpg"
+    ],
+  "isEaster_YES": [
+    "CandburyCremeEgg.jpg",
+    "ChocolateBunny.jpg"
+  ],
+  "onDiet_YES": [
+    "StretchIslandFruitLeather.jpg"
+
+  ],
+  "atTruckStop_YES": [
+    "GooGooCluster.jpg",
+    "IdahoSpud.jpg",
+    "CherryMash.jpg",
+    "NutGoodie.jpg"
+  ],
+  "likeCoconut_YES": [
+    "Mounds.jpg",
+    "AlmondJoy.jpg"
+  ],
+  "couchCushions_YES": [
+    "BrachsMix.jpg",
+    "TootsieRolls.jpg",
+    "GummyBears.jpg",
+    "FireballCandy.jpg"
+  ],
+  "likeToothpaste_YES": [
+    "YorkPeppermintPatty.jpg"
+  ],
+  "makingSundae_YES": [
+    "Butterfinger.jpg",
+    "Skor.jpg",
+    "Heath.jpg"
+  ],
+  "nothingElse_YES": [
+    "Zagnut.jpg",
+    "100Grand.jpg",
+    "Clark.jpg",
+    "Zero.jpg",
+    "5thAvenue.jpg"
+  ],
+  "andClassic_YES": [
+    "M&Ms.jpg",
+    "HersheysMilkChocolateBar.jpg",
+    "HersheysKisses.jpg"
+  ],
+  "andClassic_NO": [
+    "CharlestonChew.jpg",
+    "Valomilk.jpg",
+    "SkyBar.jpg"
+  ],
+  "thatTimeOfMonth_YES": [
+    "Toblerone.jpg",
+    "DoveDarkChocolateBar.jpg"
+  ],
+  "loveNuts_YES": [
+    "ReesesNutRageous.jpg",
+    "Snickers.jpg",
+    "BabyRuth.jpg",
+    "PayDay.jpg",
+    "HersheysMrGoodbar.jpg",
+    "NestleGiantChunky.jpg"
+  ],
+  "wantChocolate_NO": [
+    "Gobstoppers.jpg",
+    "SwedishFish.jpg",
+    "HotTamales.jpg",
+    "JellyBelly40Flavors.jpg"
+  ],
+  "wantBite_YES": [
+    "NestleCrunchBar.jpg",
+    "Twix.jpg",
+    "HersheyCoockies&Cream.jpg",
+    "KitKatClassic.jpg"
+  ],
+  "mouthLoveYou_YES": [
+    "HersheysTake5.jpg",
+    "ReesesPieces.jpg",
+    "ReesesCups.jpg",
+    "FlipzMilkChocolatePrecle.jpg"
+  ],
+  "isChristmas_YES": [
+    "CandyCanes.jpg",
+    "SeesCandies.jpg",
+    "FerreroRocher.jpg",
+    "QueenAnneCordialCherries.jpg",
+    "TerrysChocolateOrange.jpg",
+    "WhitmansSampler.jpg"
+  ],
+  "isChristmas_NO": [
+    "TootsieRollPops.jpg",
+    "3Musketeers.jpg",
+    "CaramelloMilkChocolateCandyBar.jpg",
+    "WhatChaMaCallIt.jpg",
+    "MilkyWay.jpg"
+  ]
+}
